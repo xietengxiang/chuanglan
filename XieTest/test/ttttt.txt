@@ -1,0 +1,15 @@
+﻿asdfasdfasdfasdf
+
+当你在更新所支持的MIME类型的时候，或许还想添加相关的类型，如WPF和ClickOne应用程序的支持，那么还需要添加下表中的MIME类型：
+
+Extension MIME Type
+
+.manifest application/manifest
+
+.application application/x-ms-application
+
+.xbap application/x-ms-xbap
+
+.deploy application/octet-stream
+
+.xps application/vnd.ms-xpsdocument

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <user id="001">
+    <admin>
+      <name>fred</name>
+      <password>150150</password>
+      <age>22</age>
+    </admin>
+    <admin>
+      <name>yucai</name>
+      <password>123456</password>
+      <age>21</age>
+    </admin>    
+  </user> 
+</Root>

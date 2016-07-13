@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project default="main" basedir=".">
+    <path id="classpath">
+        <dirset dir="${basedir}/target/classes" />
+    	<fileset dir="/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    	
+    </path>
+    <target name="main" depends="compile,binggen, bind" description="Main target" />
+    <target name="compile" description="Compilation target">
+        <echo>Building file.</echo>
+        <javac srcdir="${basedir}/src/" destdir="${basedir}/target/classes" 
+        	includeantruntime="true" />
+    </target>
+    <target name="binggen">
+        <echo message="Running BindGen tool" />
+        <java classpathref="classpath" fork="true" failonerror="true" 
+        	classname="org.jibx.binding.generator.BindingGen">
+        	<arg value="-s" />
+        	<arg value="${basedir}/src/com/phei/netty/nio103" />
+        	<arg value="com.phei.netty.nio103.Order" />
+        </java>
+    </target>
+    <target name="bind">
+        <echo message="Running bind" />
+        <bind binding="${basedir}/binding.xml">
+            <classpath refid="classpath"/>
+        </bind>
+    </target>
+</project>
